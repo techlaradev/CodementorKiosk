@@ -18,15 +18,19 @@ export default function LoginKiosk() {
   return (
     <div key="1" className="flex flex-col h-screen bg-[#E4C88C]">
       <header className="p-5 bg-[#F8EACD] shadow-md">
-        <nav className="bg-orange-100 dark:bg-gray-900 fixed w-full z-20 top-0 start-0 border-b border-gray-200 dark:border-gray-600">
+        <nav className="bg-orange-100 dark:bg-gray-900 fixed w-full z-20 top-0 start-0 shadow-md">
           <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
             <a
               href="https://flowbite.com/"
               className="flex items-center space-x-3 rtl:space-x-reverse"
             >
-              <img className="w-40 h-auto" src="img/header.png" alt="iai bichah" />
+              <img
+                className="w-40 h-auto"
+                src="img/header.png"
+                alt="iai bichah"
+              />
             </a>
-           
+
             <div
               className="items-center justify-between hidden w-full md:flex md:w-auto md:order-1"
               id="navbar-sticky"
@@ -37,7 +41,7 @@ export default function LoginKiosk() {
                     href="#"
                     className="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-orange-300 md:p-0 md:dark:hover:text-black-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
                   >
-                    Blog 
+                    Blog
                   </a>
                 </li>
                 <li>
@@ -62,71 +66,86 @@ export default function LoginKiosk() {
           </div>
         </nav>
       </header>
-      <main className="flex-1 p-10 flex justify-center">
-        <div className="max-w-2xl space-x-20 flex text-semibold">
-          <Card className="bg-[#F8EACD] w-1/2">
-            <CardHeader>
-              <CardTitle className="text-2xl">Bem-vindo de Volta! </CardTitle>
-              <img
-                className="w-[244px] h-[260px] origin-top-left rotate-0"
-                src="https://via.placeholder.com/244x260"
-              />
-              <CardDescription>
-                Por favor insira seu email e senha para logar!
-              </CardDescription>
-            </CardHeader>
-            <CardContent className="space-y-4">
-              <div className="space-y-2">
-                <Input
-                  className="bg-[#E4C88C] rounded-xl"
-                  placeholder="Insira seu email aqui"
-                  required
+
+      <section className="bg-orange-100 dark:bg-gray-900">
+        <div className="py-8 px-4 mx-auto max-w-screen-xl lg:py-16 grid lg:grid-cols-2 gap-8 lg:gap-16">
+          <div className="flex flex-col justify-center">
+            <h2 className="mb-4 text-4xl font-extrabold tracking-tight leading-none text-gray-900 md:text-5xl lg:text-6xl dark:text-white">
+              Aprenda Programação na prática
+            </h2>
+            <form className="mt-8 space-y-6" action="#">
+              <div>
+                <input
                   type="email"
-                />
-              </div>
-              <div className="space-y-2">
-                <Input
-                  className="bg-[#E4C88C] rounded-xl"
-                  placeholder="Insira sua senha aqui"
+                  name="email"
+                  id="email"
+                  className="bg-orange-300 border border-orange-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-orange-300 dark:border-orange-300 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                  placeholder="Insira seu e-mail aqui"
                   required
-                  type="password"
                 />
-                <Link
-                  className="text-sm text-blue-500 hover:underline"
-                  href="#"
-                >
-                  Esqueci a Senha
-                </Link>
               </div>
-              <Button
-                className="w-full mt-4 mb-17"
-                variant="outline"
-                color="#fffff"
+              <div>
+                <input
+                  type="password"
+                  name="password"
+                  id="password"
+                  placeholder="••••••••"
+                  className="bg-orange-300 border border-orange-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-orange-300 dark:border-orange-300 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                  required
+                />
+              </div>
+              <div className="flex items-start">
+                <div className="flex items-center h-5">
+                  <input
+                    id="remember"
+                    aria-describedby="remember"
+                    name="remember"
+                    type="checkbox"
+                    className="w-4 h-4 border-orange-300 rounded bg-orange-300 focus:ring-3 focus:ring-blue-300 dark:focus:ring-blue-600 dark:ring-offset-orange-300 dark:bg-orange-300 dark:border-orange-300"
+                    required
+                  />
+                </div>
+                <div className="ms-3 text-sm">
+                  <label
+                    htmlFor="remember"
+                    className="  font-bold font-['Montserrat Subrayada'] font-medium text-gray-500 dark:text-gray-400"
+                  >
+                    Lembrar do meu Login
+                  </label>
+                </div>
+                <a
+                  href="#"
+                  className="  font-bold font-['Montserrat Subrayada'] ms-auto text-sm font-medium text-blue-600 hover:underline dark:text-black-500"
+                >
+                  Perdi a minha senha, me ajuda!!
+                </a>
+              </div>
+              <button
+                type="button"
+                className="focus:outline-none text-black text-bold  font-bold font-['Montserrat Subrayada'] bg-orange-300 hover:bg-orange-500 focus:ring-4 focus:ring-orange-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:focus:ring-orange-900"
               >
-                Login with Google
-              </Button>
-            </CardContent>
-            <CardFooter>
-              <Button className="w-full mt-2 bg-[#D9B56B] text-black">
-                Sign in
-              </Button>
-            </CardFooter>
-          </Card>
-          <Card className="bg-[#F8EACD] w-1/2 ml-auto mr-10">
-            <CardHeader>
-              <CardTitle className="text-2xl"> É novo por aqui?</CardTitle>
-              <CardTitle className="text-1xl">
-                Cadastre-se agora mesmo
-              </CardTitle>
-            </CardHeader>
-            <CardFooter>
-              <Button className="w-full bg-[#D9B56B] text-black">
-                Cadastre-se e aprenda já!!!
-              </Button>
-            </CardFooter>
-          </Card>
+                Começar a programar
+              </button>
+              <div className="text-sm font-medium text-gray-900 dark:text-white">
+                Novo por aqui?{" "}
+                <a className="text-blue-600 hover:underline dark:text-blue-500">
+                  {" "}
+                  Cadastre-se!
+                </a>
+              </div>
+            </form>
+          </div>
+          <div>
+            {" "}
+            <img
+              className="h-auto max-w-lg ms-auto"
+              src="img/imagemenu.png"
+              alt="menu poh"
+            />
+          </div>
+          <div></div>
         </div>
-      </main>
+      </section>
     </div>
   );
 }
