@@ -24,11 +24,7 @@ export default function LoginKiosk() {
               href="https://flowbite.com/"
               className="flex items-center space-x-3 rtl:space-x-reverse"
             >
-              <img
-                className="w-40 h-auto"
-                src="img/header.png"
-                alt="iai bichah"
-              />
+              <img className="w-40 h-auto" src="img/header.png" alt="" />
             </a>
 
             <div
@@ -128,10 +124,12 @@ export default function LoginKiosk() {
               </button>
               <div className="text-sm font-medium text-gray-900 dark:text-white">
                 Novo por aqui?{" "}
-                <a className="text-blue-600 hover:underline dark:text-blue-500">
-                  {" "}
-                  Cadastre-se!
-                </a>
+                <Link
+                  href="/register"
+                  className="text-blue-600 hover:underline dark:text-blue-500"
+                >
+                  Cadastre-se já!
+                </Link>
               </div>
             </form>
           </div>
@@ -143,7 +141,7 @@ export default function LoginKiosk() {
               alt="menu poh"
             />
           </div>
-          <div></div>
+     
         </div>
       </section>
     </div>

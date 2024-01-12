@@ -7,77 +7,38 @@ import { Input } from "@/components/ui/input"
 import { Checkbox } from "@/components/ui/checkbox"
 
 
-export function RegisterKiosk() {
+export default function RegisterKiosk() {
   return (
-    <div key="1" className="w-[1280px] h-[832px] relative bg-orange-100">
-      <div className="w-[733px] h-[679px] left-[258px] top-[76px] absolute bg-gradient-to-br from-white/50 to-white/50 rounded-[15px] shadow border border-stone-300 backdrop-blur-2xl">
-        <div className="space-y-2 text-center pt-10">
-          <h1 className="text-3xl font-bold">
-            <img
-              alt="Create User"
-              height={50}
-              src="/placeholder.svg"
-              style={{
-                aspectRatio: "200/50",
-                display: "block",
-                marginLeft: "auto",
-                marginRight: "auto",
-                objectFit: "cover",
-              }}
-              width={200}
-            />
-          </h1>
-          <p className="text-gray-500 dark:text-gray-400 mt-20" />
+    <div className="w-screen h-screen bg-orange-100 flex items-center justify-center">
+      <div className="w-[733px] h-[879px] bg-gradient-to-br from-white to-white/50 rounded-[15px] shadow border border-orange-300 backdrop-blur-2xl p-10">
+        <img className="h-60 w-70 mx-auto" alt="" src="/img/header.png" />
+        <div className="space-y-6 text-center pt-10">
+          <h1 className="text-3xl font-bold"></h1>
+          <p className="text-black-500 dark:text-black-400 mt-20" />
         </div>
-        <div className="space-y-4 px-10 mt-20">
-          <div className="space-y-2">
-            <Input className="w-[426px] h-[61px] bg-[#DBB870] rounded-[18px] mx-auto" placeholder="Seu nome" required />
-          </div>
-          <div className="space-y-2">
-            <Input
-              className="w-[426px] h-[61px] bg-[#DBB870] rounded-[18px] mx-auto"
-              id="email"
-              placeholder="Seu Email"
-              required
-              type="email"
-            />
-          </div>
-          <div className="space-y-2">
-            <Input
-              className="w-[426px] h-[61px] bg-[#DBB870] rounded-[18px] mx-auto"
-              id="password"
-              placeholder="Insira a sua senha secreta"
-              required
-              type="password"
-            />
-          </div>
-          <div
-            className="flex items-center space-x-2"
-            style={{
-              marginLeft: "160px",
-            }}
-          >
-            <Checkbox className="bg-[#DBB870]" id="terms" />
-            <label
-              className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
-              htmlFor="terms"
-            >
+        <div className="space-y-6">
+          <Input className="w-[426px] h-[61px] bg-[#DBB870] rounded-[18px] mx-auto" placeholder="Seu nome" required />
+          <Input className="w-[426px] h-[61px] bg-[#DBB870] rounded-[18px] mx-auto font-bold font-['Montserrat Subrayada']" id="email" placeholder="Seu Email" required type="email" />
+          <Input className="w-[426px] h-[61px] bg-[#DBB870] rounded-[18px] mx-auto" id="password" placeholder="Insira a sua senha secreta" required type="password" />
+          <div className="flex items-center space-x-8 mx-auto">
+            <Checkbox className="bg-[#DBB870] font-bold font-['Montserrat Subrayada']" id="terms" />
+            <label className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70" htmlFor="terms">
               Eu concordo com os termos e serviços
             </label>
           </div>
         </div>
-      </div>
-      <div className="w-[362px] h-[46px] left-[444px] top-[593px] absolute bg-[#DBB870] rounded-[18px] flex items-center justify-center">
-        <div className="text-black text-[15px] font-bold font-['Montserrat Subrayada', sans-serif]">
-          Entrar com o google
+        <div className="w-[362px] h-[46px] bg-[#ffffff] rounded-[18px] flex items-center justify-center mx-auto mt-8">
+          <div className="text-black text-[15px] font-bold font-['Montserrat Subrayada', sans-serif]">
+            Entrar com o Google
+          </div>
         </div>
-      </div>
-      <div className="w-[362px] h-[46px] left-[444px] top-[520px] absolute bg-[#DBB870] rounded-[18px] flex items-center justify-center">
-        <div className="text-black text-[15px] font-bold font-['Montserrat Subrayada', sans-serif]">
-          Cadastre-se aprenda já!!!
+        <div className="w-[362px] h-[46px] bg-[#DBB870] rounded-[18px] flex items-center justify-center mx-auto mt-4">
+          <div className="text-black text-[15px] font-bold font-['Montserrat Subrayada', sans-serif]">
+            Aprenda já!!!
+          </div>
         </div>
       </div>
     </div>
   )
 }
-export default RegisterKiosk;
+
