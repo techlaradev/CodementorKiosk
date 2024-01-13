@@ -3,42 +3,75 @@
  * @see https://v0.dev/t/2yfeSkMc5s3
  */
 import React from "react";
-import { Input } from "@/components/ui/input"
-import { Checkbox } from "@/components/ui/checkbox"
-
+import { Input } from "@/components/ui/input";
+import { Checkbox } from "@/components/ui/checkbox";
+import Link from "next/link";
 
 export default function RegisterKiosk() {
   return (
-    <div className="w-screen h-screen bg-orange-100 flex items-center justify-center">
-      <div className="w-[733px] h-[879px] bg-gradient-to-br from-white to-white/50 rounded-[15px] shadow border border-orange-300 backdrop-blur-2xl p-10">
-        <img className="h-60 w-70 mx-auto" alt="" src="/img/header.png" />
-        <div className="space-y-6 text-center pt-10">
-          <h1 className="text-3xl font-bold"></h1>
-          <p className="text-black-500 dark:text-black-400 mt-20" />
+    <div className="w-full h-full bg-orange-100 flex items-center justify-center">
+      <div className="w-[40%] md:w-[40%] lg:w-[50%] h-[40%] md:h-[30%] lg:h-[20%] bg-gradient-to-br from-white to-white/50 rounded-[15px] shadow border border-orange-300 backdrop-blur-2xl p-6 md:p-10">
+        <img
+          className="h-10 md:h-40 w-full mx-auto"
+          alt=""
+          src="/img/header.png"
+        />
+        <div className="space-y-6 text-center pt-6 md:pt-10">
+          <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold"></h1>
+          <p className="text-black-500 dark:text-black-400 mt-4 md:mt-6" />
         </div>
         <div className="space-y-6">
-          <Input className="w-[426px] h-[61px] bg-[#DBB870] rounded-[18px] mx-auto" placeholder="Seu nome" required />
-          <Input className="w-[426px] h-[61px] bg-[#DBB870] rounded-[18px] mx-auto font-bold font-['Montserrat Subrayada']" id="email" placeholder="Seu Email" required type="email" />
-          <Input className="w-[426px] h-[61px] bg-[#DBB870] rounded-[18px] mx-auto" id="password" placeholder="Insira a sua senha secreta" required type="password" />
-          <div className="flex items-center space-x-8 mx-auto">
-            <Checkbox className="bg-[#DBB870] font-bold font-['Montserrat Subrayada']" id="terms" />
-            <label className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70" htmlFor="terms">
+          <Input
+            className="w-full md:w-[70%] h-[50px] md:h-[61px] bg-[#DBB870] rounded-[18px] mx-auto"
+            placeholder="Seu nome"
+            required
+          />
+          <Input
+            className="w-full md:w-[70%] h-[50px] md:h-[61px] bg-[#DBB870] rounded-[18px] mx-auto font-bold font-['Montserrat Subrayada']"
+            id="email"
+            placeholder="Seu Email"
+            required
+            type="email"
+          />
+          <Input
+            className="w-full md:w-[70%] h-[50px] md:h-[61px] bg-[#DBB870] rounded-[18px] mx-auto"
+            id="password"
+            placeholder="Insira a sua senha secreta"
+            required
+            type="password"
+          />
+          <div className="flex flex-col md:flex-row items-center space-y-4 md:space-y-0 md:space-x-8 mx-auto">
+            <Checkbox
+              className="bg-[#DBB870] font-bold font-['Montserrat Subrayada']"
+              id="terms"
+            />
+            <label
+              className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
+              htmlFor="terms"
+            >
               Eu concordo com os termos e serviços
             </label>
           </div>
         </div>
-        <div className="w-[362px] h-[46px] bg-[#ffffff] rounded-[18px] flex items-center justify-center mx-auto mt-8">
+        <div className="w-full md:w-[70%] h-[46px] bg-[#ffffff] rounded-[18px] flex items-center justify-center mx-auto mt-4 md:mt-8">
           <div className="text-black text-[15px] font-bold font-['Montserrat Subrayada', sans-serif]">
             Entrar com o Google
           </div>
         </div>
-        <div className="w-[362px] h-[46px] bg-[#DBB870] rounded-[18px] flex items-center justify-center mx-auto mt-4">
+        <div className="w-full md:w-[70%] h-[46px] bg-[#DBB870] rounded-[18px] flex items-center justify-center mx-auto mt-2 md:mt-4">
           <div className="text-black text-[15px] font-bold font-['Montserrat Subrayada', sans-serif]">
             Aprenda já!!!
           </div>
         </div>
+        <div>
+          <Link
+            href="/login-welcome"
+            className="text-blue-600 hover:underline dark:text-blue-500 flex items-center justify-center"
+          >
+            Lembrei que tenho uma conta!
+          </Link>
+        </div>
       </div>
     </div>
-  )
+  );
 }
-
