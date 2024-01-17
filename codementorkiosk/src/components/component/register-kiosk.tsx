@@ -9,69 +9,104 @@ import Link from "next/link";
 
 export default function RegisterKiosk() {
   return (
-    <div className="w-full h-full bg-orange-100 flex items-center justify-center">
-      <div className="w-[40%] md:w-[40%] lg:w-[50%] h-[40%] md:h-[30%] lg:h-[20%] bg-gradient-to-br from-white to-white/50 rounded-[15px] shadow border border-orange-300 backdrop-blur-2xl p-6 md:p-10">
-        <img
-          className="h-10 md:h-40 w-full mx-auto"
-          alt=""
-          src="/img/header.png"
-        />
-        <div className="space-y-6 text-center pt-6 md:pt-10">
-          <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold"></h1>
-          <p className="text-black-500 dark:text-black-400 mt-4 md:mt-6" />
-        </div>
-        <div className="space-y-6">
-          <Input
-            className="w-full md:w-[70%] h-[50px] md:h-[61px] bg-[#DBB870] rounded-[18px] mx-auto"
-            placeholder="Seu nome"
-            required
-          />
-          <Input
-            className="w-full md:w-[70%] h-[50px] md:h-[61px] bg-[#DBB870] rounded-[18px] mx-auto font-bold font-['Montserrat Subrayada']"
-            id="email"
-            placeholder="Seu Email"
-            required
-            type="email"
-          />
-          <Input
-            className="w-full md:w-[70%] h-[50px] md:h-[61px] bg-[#DBB870] rounded-[18px] mx-auto"
-            id="password"
-            placeholder="Insira a sua senha secreta"
-            required
-            type="password"
-          />
-          <div className="flex flex-col md:flex-row items-center space-y-4 md:space-y-0 md:space-x-8 mx-auto">
-            <Checkbox
-              className="bg-[#DBB870] font-bold font-['Montserrat Subrayada']"
-              id="terms"
-            />
-            <label
-              className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
-              htmlFor="terms"
-            >
-              Eu concordo com os termos e serviços
-            </label>
-          </div>
-        </div>
-        <div className="w-full md:w-[70%] h-[46px] bg-[#ffffff] rounded-[18px] flex items-center justify-center mx-auto mt-4 md:mt-8">
-          <div className="text-black text-[15px] font-bold font-['Montserrat Subrayada', sans-serif]">
-            Entrar com o Google
-          </div>
-        </div>
-        <div className="w-full md:w-[70%] h-[46px] bg-[#DBB870] rounded-[18px] flex items-center justify-center mx-auto mt-2 md:mt-4">
-          <div className="text-black text-[15px] font-bold font-['Montserrat Subrayada', sans-serif]">
-            Aprenda já!!!
-          </div>
-        </div>
-        <div>
-          <Link
-            href="/externalUser/login-welcome"
-            className="text-blue-600 hover:underline dark:text-blue-500 flex items-center justify-center"
+    <div>
+
+      <section className="bg-[#F8EACD] dark:bg-gray-900">
+        <div className="flex flex-col items-center justify-center px-6 py-8 mx-auto md:h-screen lg:py-0">
+          <a
+            href="#"
+            className="flex items-center mb-6 text-2xl font-semibold text-gray-900 dark:text-white"
           >
-            Lembrei que tenho uma conta!
-          </Link>
+           
+          </a>
+          <div className="w-full bg-white rounded-lg shadow dark:border md:mt-0 sm:max-w-md xl:p-0 dark:bg-gray-800 dark:border-gray-700">
+            <div className="p-6 space-y-4 md:space-y-6 sm:p-8">
+              <img src="/img/header.png" />
+              
+              <form className="space-y-4 md:space-y-6" action="#">
+                <div>
+                 
+                  <input
+                    type="email"
+                    name="email"
+                    id="email"
+                    className="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                    placeholder="Insira seu e-mail aqui!"
+                    required
+                  />
+                </div>     
+                <div>
+                 
+                  <input
+                    type="password"
+                    name="password"
+                    id="password"
+                    placeholder="••••••••"
+                    className="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                    required
+                  />
+                </div>
+                <div>
+                  <label
+                    htmlFor="confirm-password"
+                    className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                  >
+                    Confirm password
+                  </label>
+                  <input
+                    type="password"
+                    name="confirm-password"
+                    id="confirm-password"
+                    placeholder="••••••••"
+                    className="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                    required
+                  />
+                </div>
+                <div className="flex items-start">
+                  <div className="flex items-center h-5">
+                    <input
+                      id="terms"
+                      aria-describedby="terms"
+                      type="checkbox"
+                      className="w-4 h-4 border border-gray-300 rounded bg-gray-50 focus:ring-3 focus:ring-primary-300 dark:bg-gray-700 dark:border-gray-600 dark:focus:ring-primary-600 dark:ring-offset-gray-800"
+                      required
+                    />
+                  </div>
+                  <div className="ml-3 text-sm">
+                    <label
+                      htmlFor="terms"
+                      className="font-light text-gray-500 dark:text-gray-300"
+                    >
+                      Eu aceito os {" "}
+                      <a
+                        className="font-medium text-primary-600 hover:underline dark:text-primary-500"
+                        href="#"
+                      >
+                        Termos e Serviços
+                      </a>
+                    </label>
+                  </div>
+                </div>
+                <button
+                  type="submit"
+                  className="w-full text-black bg-orange-300 hover:bg-primary-700 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800"
+                >
+                  Começar a jornada
+                </button>
+                <p className="text-sm font-light text-gray-500 dark:text-gray-400">
+                  Já tem conta?{" "}
+                  <a
+                    href="/externalUser/login-welcome"
+                    className="font-medium text-primary-600 hover:underline dark:text-primary-500"
+                  >
+                    Cola aqui!
+                  </a>
+                </p>
+              </form>
+            </div>
+          </div>
         </div>
-      </div>
+      </section>
     </div>
   );
 }

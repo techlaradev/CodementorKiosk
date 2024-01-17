@@ -35,7 +35,7 @@ export function LoginWelcome() {
 
                 <li>
                   <a
-                    href="/externalUser/contato"
+                    href="/externalUser/qm-somos"
                     className="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-orange-300 md:p-0 md:dark:hover:text-black-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
                   >
                     Quem Somos?
@@ -60,23 +60,23 @@ export function LoginWelcome() {
       <section className="w-full py-12 md:py-24 lg:py-32 xl:py-48 bg-orange-100">
         <div className="container px-4 md:px-6">
           <div className="flex flex-col items-center space-y-4 text-center">
-            <div className="space-y-2">
                 <img
                   className="flex flex-1 justify-center "
                   src="/img/header.png"
                 />
+            <div className="space-y-2">
+              <h1 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl lg:text-6xl/none">
+                Bem vindo de volta!
+              </h1>
               </div>
               <div className="flex flex-1 justify-center">
-              <h3 className="text-1xl font-bold tracking-tighter sm:text-4xl md:text-5xl lg:text-3xl/none">
-                Bem vindo de volta!
-              </h3>
             </div>
             <div className="w-full max-w-sm space-y-2">
               <form className="">
                 <div className="flex flex-col items-center">
                   <Input
                     className="max-w-lg mb-4"
-                    placeholder="Enter your email"
+                    placeholder="Insira seu e-mail aqui"
                     type="email"
                   />
 
@@ -90,11 +90,7 @@ export function LoginWelcome() {
                   Quero criar uma nova conta!
                 </Link>
               </p>
-              <p>    
-                 <Link className="underline underline-offset-2" href="/externalUser/esqueci-senha">
-                 não lembro minha senha/conta
-                </Link>
-                </p>
+              
             </div>
           </div>
         </div>
