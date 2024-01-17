@@ -65,7 +65,7 @@ export default function RegisterKiosk() {
         </div>
         <div>
           <Link
-            href="/login-welcome"
+            href="/externalUser/login-welcome"
             className="text-blue-600 hover:underline dark:text-blue-500 flex items-center justify-center"
           >
             Lembrei que tenho uma conta!
