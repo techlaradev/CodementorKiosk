@@ -1,4 +1,4 @@
-import LoginKiosk from "@/components/component/login-kiosk";
+import LoginKiosk from "@/components/component/login-kiosk"
 
 export default function LoginKioskcomponent(){
 

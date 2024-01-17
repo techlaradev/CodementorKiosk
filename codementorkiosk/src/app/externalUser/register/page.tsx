@@ -1,4 +1,4 @@
-import RegisterKiosk from "@/components/component/register-kiosk"
+import RegisterKiosk from "@/components/component/register-kiosk";
 import RootLayout from "@/app/layout";
 
 const RegisterKioskComponent = () => {
