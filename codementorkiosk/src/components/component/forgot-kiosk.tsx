@@ -90,11 +90,7 @@ export default function ForgotKiosk() {
                   Quero criar uma nova conta!
                 </Link>
               </p>
-              <p>    
-                 <Link className="underline underline-offset-2" href="/externalUser/esqueci-senha">
-                 Não lembro meu E-mail
-                </Link>
-                </p>
+             
             </div>
           </div>
         </div>
