@@ -8,7 +8,7 @@ import { Button } from "@/components/ui/button"
 export  function HomeCourseWave() {
   return (
     <div className="bg-orange-100 w-full h-full flex">
-    <header className="p-5 bg-[#F8EACD] shadow-md">
+    <header className="p-5 bg-orange-100 shadow-md">
         <nav className="bg-orange-100 dark:bg-gray-900 fixed w-full z-20 top-0 start-0 shadow-md">
           <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
             <a
@@ -60,6 +60,9 @@ export  function HomeCourseWave() {
 
       <section className="bg-orange-100 flex-1 p-6" style={{ marginTop: '40px' }}>
   <div className="py-8 px-4 mx-auto max-w-screen-xl text-center lg:py-16 z-10 relative" style={{ marginTop: '40px' }}>
+  <h2 className="mb-4 text-4xl font-extrabold tracking-tight leading-none text-gray-900 md:text-5xl lg:text-6xl dark:text-white">
+             Meus Cursos
+            </h2>
   <article className="bg-white border rounded-lg p-4 space-y-2 max-w-sm" style={{ marginTop: '40px' }}>
   <h2 className="text-xl font-bold">SQL - Manipulação e Gerenciamento de Dados</h2>
   <p className="text-gray-500 dark:text-gray-400">
