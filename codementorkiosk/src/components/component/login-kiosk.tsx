@@ -94,12 +94,15 @@ export default function LoginKiosk() {
                   Perdi a minha senha, me ajuda!!
                 </a>
               </div>
-              <button
-                type="button"
-                className="focus:outline-none text-black text-bold  font-bold font-['Montserrat Subrayada'] bg-orange-300 hover:bg-orange-500 focus:ring-4 focus:ring-orange-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:focus:ring-orange-900"
+             
+             
+          
+              <a
+                href="/InternalUser/home"
+                className=" bg-orange-300 inline-flex justify-center items-center py-3 px-5 sm:ms-4 text-base font-medium text-center text-gray-900 rounded-lg border border-gray-300 hover:bg-gray-100 focus:ring-4 focus:ring-gray-100 dark:text-black dark:border-gray-700 dark:hover:bg-gray-700 dark:focus:ring-gray-800"
               >
                 Começar a programar
-              </button>
+              </a>
               <div className="text-sm font-medium text-gray-900 dark:text-white">
                 Novo por aqui?{" "}
                 <Link
