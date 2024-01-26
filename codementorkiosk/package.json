@@ -6,7 +6,9 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "create:component": "node scripts/generateComponent.js",
+    "create:page i":"node scripts/generateInternPage.js"
   },
   "dependencies": {
     "@radix-ui/react-checkbox": "^1.0.4",
