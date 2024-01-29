@@ -17,7 +17,7 @@ const config: Config = {
       },
     },
   },
-  plugins: [require('tailwindcss-animate')],
+  plugins: [require('tailwindcss-animate'), require("daisyui"), require("flowbite/plugin")],
 };
 
 export default config;
