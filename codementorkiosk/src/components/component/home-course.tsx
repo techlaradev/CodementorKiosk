@@ -10,46 +10,60 @@ export function HomeCourseWave() {
     <div className="bg-orange-100 w-full h-full flex">
       <header className="p-5 bg-orange-100 shadow-md">
         <nav className="bg-orange-100 dark:bg-gray-900 fixed w-full z-20 top-0 start-0 shadow-md">
-          <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
-            <a
-              href="/"
-              className="flex items-center space-x-3 rtl:space-x-reverse"
-            >
-              <img className="w-40 h-auto" src="/img/header.png" alt="" />
-            </a>
-
-            <div
-              className="items-center justify-between hidden w-full md:flex md:w-auto md:order-1"
-              id="navbar-sticky"
-            >
-              <ul className="flex flex-col p-4 md:p-0 mt-4 font-medium border border-gray-100 rounded-lg bg-gray-50 md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-orange-100 dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
-                <li>
-                  <a
-                    href="/externalUser/blog"
-                    className="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-orange-300 md:p-0 md:dark:hover:text-black-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
+          <div className="navbar bg-orange-100">
+            <div className="flex-1">
+              <a className="btn btn-ghost text-xl">
+                <img
+                  className="justify-between w-40 h-auto"
+                  src="/img/header.png"
+                />
+              </a>
+            </div>
+            <div className="flex space-x-5">
+              <Link href="/externalUser/blog">
+                <button className="btn glass">Meus Cursos</button>
+              </Link>
+              <Link href="/externalUser/blog">
+                <button className="btn glass">Jonny me ajuda!</button>
+              </Link>
+              <Link href="/externalUser/blog">
+                <button className="btn glass">Meus Projetos</button>
+              </Link>
+            </div>
+            <div className="flex space-x-5">
+              <div className="flex space-x-10">
+                <div className="dropdown dropdown-end">
+                  <div
+                    tabIndex={0}
+                    role="button"
+                    className="btn btn-ghost btn-circle avatar"
                   >
-                    Meus Cursos
-                  </a>
-                </li>
-
-                <li>
-                  <a
-                    href="/"
-                    className="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-orange-300 md:p-0 md:dark:hover:text-black-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
+                    <div className="w-10 rounded-full">
+                      <img
+                        alt="Tailwind CSS Navbar component"
+                        src="https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg"
+                      />
+                    </div>
+                  </div>
+                  <ul
+                    tabIndex={0}
+                    className="mt-3 z-[1] p-2 shadow menu menu-sm dropdown-content bg-base-100 rounded-box w-52"
                   >
-                    Jonny me ajuda!
-                  </a>
-                </li>
-
-                <li>
-                  <a
-                    href="/externalUser/contato"
-                    className="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-orange-300 md:p-0 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
-                  >
-                    Meus projetos
-                  </a>
-                </li>
-              </ul>
+                    <li>
+                      <a className="justify-between">
+                        Profile
+                        <span className="badge">New</span>
+                      </a>
+                    </li>
+                    <li>
+                      <a>Settings</a>
+                    </li>
+                    <li>
+                      <a>Logout</a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
             </div>
           </div>
         </nav>
@@ -147,7 +161,7 @@ export function HomeCourseWave() {
             <a
               href="#"
               className="bg-yellow-100 text-yellow-800 text-xs font-medium inline-flex items-center px-2.5 py-0.5 rounded-md dark:bg-gray-700 dark:text-yellow-400 mb-2"
-              >
+            >
               <svg
                 className="w-2.5 h-2.5 me-1.5"
                 aria-hidden="true"
