@@ -73,13 +73,6 @@ export function HomeCourseWave() {
         className="bg-orange-100 flex-1 p-6"
         style={{ marginTop: "40px" }}
       >
-        <h3
-          className="mb-4 text-4xl font-extrabold tracking-tight leading-none text-gray-900 md:text-5xl lg:text-3xl dark:text-white flex-1 p-6"
-          style={{ marginTop: "40px" }}
-        >
-          <img src="/img/jonny/cool.png" alt="joni" className="w-13 h-11" />
-          Olá, !
-        </h3>
         <div
           className="py-8 px-4 mx-auto  text-center lg:py-16 z-10 relative"
           style={{ marginTop: "40px" }}
@@ -113,6 +106,34 @@ export function HomeCourseWave() {
               />
             </svg>
           </a>
+          <h3
+            className="mb-4 text-4xl font-extrabold tracking-tight leading-none text-gray-900 md:text-5xl lg:text-3xl dark:text-white flex-1 p-6"
+            style={{ marginTop: "40px" }}
+          >
+            <img src="/img/jonny/cool.png" alt="joni" className="w-13 h-11" />
+            Olá, !
+          </h3>
+          <div className="card w-96 glass">
+            <figure>
+              <img
+                src="https://bairesdev.mo.cloudinary.net/blog/2023/08/What-Is-JavaScript-Used-For.jpg?tx=w_3840,q_auto"
+                alt="car!"
+              />
+            </figure>
+            <div className="card-body">
+              <h2 className="card-title">Java Script</h2>
+              <p>
+                <progress
+                  className="progress progress-accent w-full"
+                  value="100"
+                  max="100"
+                ></progress>
+              </p>
+              <div className="card-actions justify-end">
+                <button className="btn btn-primary">Concluido!</button>
+              </div>
+            </div>
+          </div>
 
           <article
             className="bg-white border rounded-lg p-4 space-y-2 max-w-sm"
