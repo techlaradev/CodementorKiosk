@@ -80,32 +80,32 @@ export function HomeCourseWave() {
           <h2 className="mb-1 text-4xl font-extrabold tracking-tight leading-none text-gray-900 md:text-5xl lg:text-6xl dark:text-white">
             Meus Cursos
           </h2>
-          <a
-            href="/externalUser/blog"
-            className="inline-flex justify-between items-center py-1 px-1 pe-4 mb-5 text-sm text-black-700 bg-orange-100 rounded-full dark:bg-blue-900 dark:text-blue-300 hover:bg-blue-200 dark:hover:bg-blue-800"
-          >
-            <span className="text-xs bg-orange-300 rounded-full text-white px-4 py-1.5 me-3">
-              Novo
-            </span>
-            <span className="text-sm font-medium">
-              Confira a nova atualização
-            </span>
+
+          <a className="inline-flex justify-between items-center py-1 px-1 pe-4 mb-5 text-sm text-black-700 bg-orange-100 rounded-full dark:bg-blue-900 dark:text-blue-300 hover:bg-blue-200 dark:hover:bg-blue-800">
+            <div className="form-control">
+              <input
+                type="text"
+                placeholder="Search"
+                className="input input-bordered w-24 md:w-auto"
+              />
+            </div>
+          </a>
+          <button className="btn btn-ghost btn-circle">
             <svg
-              className="w-2.5 h-2.5 ms-2 rtl:rotate-180"
-              aria-hidden="true"
               xmlns="http://www.w3.org/2000/svg"
+              className="h-5 w-5"
               fill="none"
-              viewBox="0 0 6 10"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
             >
               <path
-                stroke="currentColor"
                 strokeLinecap="round"
                 strokeLinejoin="round"
                 strokeWidth="2"
-                d="m1 9 4-4-4-4"
+                d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
               />
             </svg>
-          </a>
+          </button>
           <h3
             className="mb-4 text-4xl font-extrabold tracking-tight leading-none text-gray-900 md:text-5xl lg:text-3xl dark:text-white flex-1 p-6"
             style={{ marginTop: "40px" }}
@@ -113,138 +113,77 @@ export function HomeCourseWave() {
             <img src="/img/jonny/cool.png" alt="joni" className="w-13 h-11" />
             Olá, !
           </h3>
-          <div className="card w-96 glass">
-            <figure>
-              <img
-                src="https://bairesdev.mo.cloudinary.net/blog/2023/08/What-Is-JavaScript-Used-For.jpg?tx=w_3840,q_auto"
-                alt="car!"
-              />
-            </figure>
-            <div className="card-body">
-              <h2 className="card-title">Java Script</h2>
-              <p>
-                <progress
-                  className="progress progress-accent w-full"
-                  value="100"
-                  max="100"
-                ></progress>
-              </p>
-              <div className="card-actions justify-end">
-                <button className="btn btn-primary">Concluido!</button>
+          <div className="flex space-x-5 flex-wrap justify-center">
+            <div>
+              <div className="card w-96 glass">
+                <figure>
+                  <img
+                    src="https://bairesdev.mo.cloudinary.net/blog/2023/08/What-Is-JavaScript-Used-For.jpg?tx=w_3840,q_auto"
+                    alt="car!"
+                  />
+                </figure>
+                <div className="card-body">
+                  <h2 className="card-title">Java Script</h2>
+                  <p>
+                    <progress
+                      className="progress progress-accent w-full"
+                      value="100"
+                      max="100"
+                    ></progress>
+                  </p>
+                  <div className="card-actions justify-end">
+                    <button className="btn btn-primary">Concluido!</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div>
+              <div className="card w-96 glass">
+                <figure>
+                  <img
+                    src="https://hermes.dio.me/articles/cover/4cb46a28-34fb-4c72-9588-b5ed52b9470f.jpg"
+                    alt="car!"
+                  />
+                </figure>
+                <div className="card-body">
+                  <h2 className="card-title">HTML e CSS</h2>
+                  <p>
+                    <progress
+                      className="progress progress-accent w-full"
+                      value="10"
+                      max="100"
+                    ></progress>
+                  </p>
+                  <div className="card-actions justify-end">
+                    <button className="btn btn-primary">Em Progresso!</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div>
+              <div className="card w-96 glass">
+                <figure>
+                  <img
+                    src="https://dkrn4sk0rn31v.cloudfront.net/uploads/2022/05/como-instalar-o-csharp-e-nosso-primeiro-exemplo.png"
+                    alt="car!"
+                  />
+                </figure>
+                <div className="card-body">
+                  <h2 className="card-title">C#</h2>
+                  <p>
+                    <progress
+                      className="progress progress-accent w-full"
+                      value="0"
+                      max="100"
+                    ></progress>
+                  </p>
+                  <div className="card-actions justify-end">
+                    <button className="btn btn-primary">Bora iniciar!</button>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
-
-          <article
-            className="bg-white border rounded-lg p-4 space-y-2 max-w-sm"
-            style={{ marginTop: "40px" }}
-          >
-            <h2 className="text-xl font-bold">
-              Web Básico - HTML, CSS, e Javascript{" "}
-            </h2>
-            <a
-              href="#"
-              className="bg-green-100 text-green-800 text-xs font-medium inline-flex items-center px-2.5 py-0.5 rounded-md dark:bg-gray-700 dark:text-green-400 mb-2"
-            >
-              <svg
-                className="w-2.5 h-2.5 me-1.5"
-                aria-hidden="true"
-                xmlns="http://www.w3.org/2000/svg"
-                fill="currentColor"
-                viewBox="0 0 18 18"
-              >
-                <path
-                  stroke="currentColor"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="m10 8.1-3.7.3-2 2a1 1 0 0 0 .5 1.6l2.7.3M16 14l-.3 3.7-2 2a1 1 0 0 1-1.6-.5l-.4-2.7m8.2-11.1a1.4 1.4 0 0 0-1.2-1.2c-1.6-.2-4.9-.6-6.3.9a70.7 70.7 0 0 0-6.5 10.6c0 .2.2.4.3.5l.8.9.9.8a1 1 0 0 0 1 .2A71 71 0 0 0 19 11.8c1.5-1.5 1.1-4.8.9-6.4Zm-3 3.7A1.9 1.9 0 1 1 13 9a1.9 1.9 0 0 1 3.8 0Z"
-                />{" "}
-              </svg>
-              Concluido
-            </a>
-            <p className="text-gray-500 dark:text-gray-400">
-              Explore advanced patterns in React for managing state and side
-              effects.
-            </p>
-            <Button className="text-white bg-black w-full disabled">
-              Finalizado
-            </Button>
-          </article>
-
-          <article
-            className="bg-white border rounded-lg p-4 space-y-2 max-w-sm"
-            style={{ marginTop: "40px" }}
-          >
-            <h2 className="text-xl font-bold">
-              Web Básico - HTML, CSS, e Javascript{" "}
-            </h2>
-            <a
-              href="#"
-              className="bg-yellow-100 text-yellow-800 text-xs font-medium inline-flex items-center px-2.5 py-0.5 rounded-md dark:bg-gray-700 dark:text-yellow-400 mb-2"
-            >
-              <svg
-                className="w-2.5 h-2.5 me-1.5"
-                aria-hidden="true"
-                xmlns="http://www.w3.org/2000/svg"
-                fill="currentColor"
-                viewBox="0 0 18 18"
-              >
-                <path
-                  stroke="currentColor"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="m10 8.1-3.7.3-2 2a1 1 0 0 0 .5 1.6l2.7.3M16 14l-.3 3.7-2 2a1 1 0 0 1-1.6-.5l-.4-2.7m8.2-11.1a1.4 1.4 0 0 0-1.2-1.2c-1.6-.2-4.9-.6-6.3.9a70.7 70.7 0 0 0-6.5 10.6c0 .2.2.4.3.5l.8.9.9.8a1 1 0 0 0 1 .2A71 71 0 0 0 19 11.8c1.5-1.5 1.1-4.8.9-6.4Zm-3 3.7A1.9 1.9 0 1 1 13 9a1.9 1.9 0 0 1 3.8 0Z"
-                />{" "}
-              </svg>
-              Em progresso
-            </a>
-            <p className="text-gray-500 dark:text-gray-400">
-              Explore advanced patterns in React for managing state and side
-              effects.
-            </p>
-            <Button className="text-white bg-black w-full">
-              Start Tutorial
-            </Button>
-          </article>
-
-          <article
-            className="bg-white border rounded-lg p-4 space-y-2 max-w-sm"
-            style={{ marginTop: "40px" }}
-          >
-            <h2 className="text-xl font-bold">
-              Web Básico - HTML, CSS, e Javascript{" "}
-            </h2>
-            <a
-              href="#"
-              className="bg-yellow-100 text-yellow-800 text-xs font-medium inline-flex items-center px-2.5 py-0.5 rounded-md dark:bg-gray-700 dark:text-yellow-400 mb-2"
-            >
-              <svg
-                className="w-2.5 h-2.5 me-1.5"
-                aria-hidden="true"
-                xmlns="http://www.w3.org/2000/svg"
-                fill="currentColor"
-                viewBox="0 0 18 18"
-              >
-                <path
-                  stroke="currentColor"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="m10 8.1-3.7.3-2 2a1 1 0 0 0 .5 1.6l2.7.3M16 14l-.3 3.7-2 2a1 1 0 0 1-1.6-.5l-.4-2.7m8.2-11.1a1.4 1.4 0 0 0-1.2-1.2c-1.6-.2-4.9-.6-6.3.9a70.7 70.7 0 0 0-6.5 10.6c0 .2.2.4.3.5l.8.9.9.8a1 1 0 0 0 1 .2A71 71 0 0 0 19 11.8c1.5-1.5 1.1-4.8.9-6.4Zm-3 3.7A1.9 1.9 0 1 1 13 9a1.9 1.9 0 0 1 3.8 0Z"
-                />{" "}
-              </svg>
-              Em progresso
-            </a>
-            <p className="text-gray-500 dark:text-gray-400">
-              Explore advanced patterns in React for managing state and side
-              effects.
-            </p>
-            <Button className="text-white bg-black w-full">
-              Start Tutorial
-            </Button>
-          </article>
         </div>
       </section>
     </div>
