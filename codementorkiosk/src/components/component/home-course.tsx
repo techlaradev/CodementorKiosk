@@ -18,6 +18,7 @@ export function HomeCourseWave() {
                   src="/img/header.png"
                 />
               </a>
+              <title>Code Mentor</title>
             </div>
             <div className="flex space-x-5">
               <Link href="/externalUser/blog">
