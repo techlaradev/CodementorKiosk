@@ -125,54 +125,60 @@ export function HomeCourse() {
             </form>
           </div>
 
-          <div className="flex space-x-5 flex-wrap justify-center">
-            <div className="card w-96 glass">
+          <div className="flex space-x-5 space-y-5 flex-wrap justify-center">
+            <div className="card w-96 bg-base-100 shadow-xl image-full">
               <figure>
                 <img
-                  src="https://bairesdev.mo.cloudinary.net/blog/2023/08/What-Is-JavaScript-Used-For.jpg?tx=w_3840,q_auto"
-                  alt="car!"
+                  src="https://areadev.com.br/wp-content/uploads/2022/10/JAVASCRIPT-416x234.png"
+                  alt="Shoes"
                 />
               </figure>
               <div className="card-body">
                 <h2 className="card-title">Java Script</h2>
-
+                <p>
+                  é uma linguagem de programação de alto nível, dinâmica e
+                  orientada a objetos, amplamente utilizada para desenvolvimento
+                  web.
+                </p>
                 <div className="card-actions justify-end">
                   <button className="btn btn-primary">Bora iniciar!</button>
                 </div>
               </div>
             </div>
-
-            <div>
-              <div className="card w-96 glass">
-                <figure>
-                  <img
-                    src="https://hermes.dio.me/articles/cover/4cb46a28-34fb-4c72-9588-b5ed52b9470f.jpg"
-                    alt="car!"
-                  />
-                </figure>
-                <div className="card-body">
-                  <h2 className="card-title">HTML e CSS</h2>
-
-                  <div className="card-actions justify-end">
-                    <button className="btn btn-primary">Bora iniciar!</button>
-                  </div>
+            <div className="card w-96 bg-base-100 shadow-xl image-full">
+              <figure>
+                <img
+                  src="https://hermes.dio.me/articles/cover/4cb46a28-34fb-4c72-9588-b5ed52b9470f.jpg"
+                  alt="Shoes"
+                />
+              </figure>
+              <div className="card-body">
+                <h2 className="card-title">HTML e CSS</h2>
+                <p>
+                  HTML (Hypertext Markup Language) e CSS (Cascading Style
+                  Sheets) são linguagens fundamentais para a criação e
+                  estilização de páginas web.
+                </p>
+                <div className="card-actions justify-end">
+                  <button className="btn btn-primary">Bora iniciar!</button>
                 </div>
               </div>
             </div>
-            <div>
-              <div className="card w-96 glass">
-                <figure>
-                  <img
-                    src="https://dkrn4sk0rn31v.cloudfront.net/uploads/2022/05/como-instalar-o-csharp-e-nosso-primeiro-exemplo.png"
-                    alt="car!"
-                  />
-                </figure>
-                <div className="card-body">
-                  <h2 className="card-title">C#</h2>
-
-                  <div className="card-actions justify-end">
-                    <button className="btn btn-primary">Bora iniciar!</button>
-                  </div>
+            <div className="card w-96 bg-base-100 shadow-xl image-full">
+              <figure>
+                <img
+                  src="https://dkrn4sk0rn31v.cloudfront.net/uploads/2022/05/como-instalar-o-csharp-e-nosso-primeiro-exemplo.png"
+                  alt="Shoes"
+                />
+              </figure>
+              <div className="card-body">
+                <h2 className="card-title">C#</h2>
+                <p>
+                  linguagem de programação moderna e orientada a objetos
+                  desenvolvida pela Microsoft como parte da plataforma .NET.
+                </p>
+                <div className="card-actions justify-end">
+                  <button className="btn btn-primary">Bora iniciar!</button>
                 </div>
               </div>
             </div>
