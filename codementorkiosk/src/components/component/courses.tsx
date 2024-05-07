@@ -1,11 +1,11 @@
-import Link from "next/link";
 import React from "react";
+import { Card } from "../ui/card";
+import Link from "next/link";
 
 export function HomeCourse() {
   return (
     <div className="bg-orange-100 w-full h-full flex">
       <header className="p-5 bg-orange-100 shadow-md">
-        <html data-theme="light"></html>
         <nav className="bg-orange-100 dark:bg-gray-900 fixed w-full z-20 top-0 start-0 shadow-md">
           <div className="navbar bg-orange-100">
             <div className="flex-1">
@@ -13,9 +13,10 @@ export function HomeCourse() {
                 <img
                   className="justify-between w-40 h-auto"
                   src="/img/header.png"
+                  alt="Logo"
                 />
               </a>
-              <title>Code Mentor</title>
+              <title>Code Mentor: Cursos</title>
             </div>
             <div className="space-x-4">
               <div className="flex space-x-5">
@@ -83,102 +84,90 @@ export function HomeCourse() {
           <h2 className="mb-1 text-4xl font-extrabold tracking-tight leading-none text-gray-900 md:text-5xl lg:text-6xl dark:text-white">
             Cursos
           </h2>
-          <div>
-            <form>
-              <label className="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-white">
-                Search
-              </label>
-              <div className="relative">
-                <div className="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none">
-                  <svg
-                    className="w-4 h-4 text-gray-500 dark:text-gray-400"
-                    aria-hidden="true"
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="none"
-                    viewBox="0 0 20 20"
-                  >
-                    <path
-                      stroke="currentColor"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      stroke-width="2"
-                      d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z"
-                    />
-                  </svg>
-                </div>
-                <div className="flex space-x-5 space-y-20 flex-wrap justify-center">
-                  <input
-                    type="search"
-                    id="default-search"
-                    className="block w-full p-4 ps-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                    placeholder="Pesquise por um curso..."
-                    required
+          <h3
+            className="mb-4 text-4xl font-extrabold tracking-tight leading-none text-gray-900 md:text-5xl lg:text-3xl dark:text-white flex-1 p-6"
+            style={{ marginTop: "40px" }}
+          >
+            Olá, [ User name ] !
+          </h3>
+          <div className="flex space-x-5 flex-wrap justify-center">
+            <div>
+              <div className="card w-96 glass">
+                <figure>
+                  <img
+                    src="https://bairesdev.mo.cloudinary.net/blog/2023/08/What-Is-JavaScript-Used-For.jpg?tx=w_3840,q_auto"
+                    alt="car!"
                   />
-                  <button
-                    type="submit"
-                    className="text-white absolute end-2.5 bottom-2.5 bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
-                  >
-                    Pesquisar
-                  </button>
-                </div>
-              </div>
-            </form>
-          </div>
-
-          <div className="flex space-x-5 space-y-5 flex-wrap justify-center">
-            <div className="card w-96 bg-base-100 shadow-xl image-full">
-              <figure>
-                <img
-                  src="https://areadev.com.br/wp-content/uploads/2022/10/JAVASCRIPT-416x234.png"
-                  alt="Shoes"
-                />
-              </figure>
-              <div className="card-body">
-                <h2 className="card-title">Java Script</h2>
-                <p>
-                  é uma linguagem de programação de alto nível, dinâmica e
-                  orientada a objetos, amplamente utilizada para desenvolvimento
-                  web.
-                </p>
-                <div className="card-actions justify-end">
-                  <button className="btn btn-primary">Bora iniciar!</button>
-                </div>
-              </div>
-            </div>
-            <div className="card w-96 bg-base-100 shadow-xl image-full">
-              <figure>
-                <img
-                  src="https://hermes.dio.me/articles/cover/4cb46a28-34fb-4c72-9588-b5ed52b9470f.jpg"
-                  alt="Shoes"
-                />
-              </figure>
-              <div className="card-body">
-                <h2 className="card-title">HTML e CSS</h2>
-                <p>
-                  HTML (Hypertext Markup Language) e CSS (Cascading Style
-                  Sheets) são linguagens fundamentais para a criação e
-                  estilização de páginas web.
-                </p>
-                <div className="card-actions justify-end">
-                  <button className="btn btn-primary">Bora iniciar!</button>
+                </figure>
+                <div className="card-body cursor-pointer">
+                  <h2 className="card-title">Guia em Java Script</h2>
+                  <h3 className="text-sm text-left">
+                    {" "}
+                    Desenvolva habilidades sólidas em programação com uma
+                    linguagem amplamente utilizada na indústria de software. Com
+                    uma sintaxe simples e poderosa, o C# é ideal para iniciantes
+                    e oferece um caminho claro para construir aplicativos para
+                    desktop, web e dispositivos móveis.
+                  </h3>
+                  <div className="card-actions justify-end">
+                    <Link href="/internalUser/home-wave">
+                      <svg
+                        className=" w-6 h-6  text-gray-800 dark:text-white"
+                        aria-hidden="true"
+                        xmlns="http://www.w3.org/2000/svg"
+                        fill="currentColor"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          fill-rule="evenodd"
+                          d="M2 12a10 10 0 1 1 20 0 10 10 0 0 1-20 0Zm13.7-1.3a1 1 0 0 0-1.4-1.4L11 12.6l-1.8-1.8a1 1 0 0 0-1.4 1.4l2.5 2.5c.4.4 1 .4 1.4 0l4-4Z"
+                          clip-rule="evenodd"
+                        />
+                      </svg>
+                    </Link>
+                  </div>
                 </div>
               </div>
             </div>
-            <div className="card w-96 bg-base-100 shadow-xl image-full">
-              <figure>
-                <img
-                  src="https://dkrn4sk0rn31v.cloudfront.net/uploads/2022/05/como-instalar-o-csharp-e-nosso-primeiro-exemplo.png"
-                  alt="Shoes"
-                />
-              </figure>
-              <div className="card-body">
-                <h2 className="card-title">C#</h2>
-                <p>
-                  linguagem de programação moderna e orientada a objetos
-                  desenvolvida pela Microsoft como parte da plataforma .NET.
-                </p>
-                <div className="card-actions justify-end">
-                  <button className="btn btn-primary">Bora iniciar!</button>
+            <div>
+              <div className="card w-96 glass">
+                <figure>
+                  <img
+                    src="https://hermes.dio.me/articles/cover/4cb46a28-34fb-4c72-9588-b5ed52b9470f.jpg"
+                    alt="car!"
+                  />
+                </figure>
+                <div className="card-body cursor-pointer">
+                  <h2 className="card-title">HTML e CSS</h2>
+                  <h3 className="text-sm text-left">
+                    {" "}
+                    Desenvolva habilidades sólidas em programação com uma
+                    linguagem amplamente utilizada na indústria de software. Com
+                    uma sintaxe simples e poderosa, o C# é ideal para iniciantes
+                    e oferece um caminho claro para construir aplicativos para
+                    desktop, web e dispositivos móveis.
+                  </h3>
+                </div>
+              </div>
+            </div>
+            <div>
+              <div className="card w-96 glass">
+                <figure>
+                  <img
+                    src="https://dkrn4sk0rn31v.cloudfront.net/uploads/2022/05/como-instalar-o-csharp-e-nosso-primeiro-exemplo.png"
+                    alt="car!"
+                  />
+                </figure>
+                <div className="card-body cursor-pointer">
+                  <h2 className="card-title">C#</h2>
+                  <h3 className="text-sm text-left">
+                    {" "}
+                    Desenvolva habilidades sólidas em programação com uma
+                    linguagem amplamente utilizada na indústria de software. Com
+                    uma sintaxe simples e poderosa, o C# é ideal para iniciantes
+                    e oferece um caminho claro para construir aplicativos para
+                    desktop, web e dispositivos móveis.
+                  </h3>
                 </div>
               </div>
             </div>
