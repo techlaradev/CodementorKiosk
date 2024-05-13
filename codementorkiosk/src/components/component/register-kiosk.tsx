@@ -80,7 +80,7 @@ export default function RegisterKiosk() {
                       Eu aceito os {" "}
                       <a
                         className="font-medium text-primary-600 hover:underline dark:text-primary-500"
-                        href="#"
+                        href="/externalUser/term-service"
                       >
                         Termos e Serviços
                       </a>
