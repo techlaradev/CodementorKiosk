@@ -1,11 +1,29 @@
+import React, { useState } from 'react';
 import Link from "next/link";
-
+import axios from 'axios';
 import { CardTitle, CardDescription, CardHeader, CardContent, CardFooter, Card } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 
+const LoginKiosk: React.FC = () => {
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const [error, setError] = useState('');
 
-export default function LoginKiosk() {
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    try {
+      const response = await axios.post('http://localhost:5000/api/login', { email, password });
+      // Supondo que a resposta tenha um token ou algo semelhante
+      const { token } = response.data;
+      // Armazene o token em algum lugar (localStorage, context, etc.)
+      console.log('Login bem-sucedido!', token);
+    } catch (error) {
+      console.error('Erro ao fazer login', error);
+      setError('Credenciais inválidas');
+    }
+  };
+
   return (
     <div key="1" className="flex flex-col h-screen bg-[#E4C88C]">
       <header className="p-5 bg-[#f8eacd] shadow-md">
@@ -33,8 +51,6 @@ export default function LoginKiosk() {
                     Contate-nos
                   </a>
                 </li>
-
-
               </ul>
             </div>
           </div>
@@ -47,7 +63,7 @@ export default function LoginKiosk() {
             <h2 className="mb-4 text-4xl font-extrabold tracking-tight leading-none text-gray-900 md:text-5xl lg:text-6xl dark:text-white">
               Aprenda Programação na prática
             </h2>
-            <form className="mt-8 space-y-6" action="#">
+            <form className="mt-8 space-y-6" onSubmit={handleSubmit}>
               <div>
                 <input
                   type="email"
@@ -56,6 +72,8 @@ export default function LoginKiosk() {
                   className="bg-orange-300 border border-orange-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-orange-300 dark:border-orange-300 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                   placeholder="Insira seu e-mail aqui"
                   required
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
                 />
               </div>
               <div>
@@ -66,6 +84,8 @@ export default function LoginKiosk() {
                   placeholder="••••••••"
                   className="bg-orange-300 border border-orange-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-orange-300 dark:border-orange-300 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                   required
+                  value={password}
+                  onChange={(e) => setPassword(e.target.value)}
                 />
               </div>
               <div className="flex items-start">
@@ -76,31 +96,31 @@ export default function LoginKiosk() {
                     name="remember"
                     type="checkbox"
                     className="w-4 h-4 border-orange-300 rounded bg-orange-300 focus:ring-3 focus:ring-blue-300 dark:focus:ring-blue-600 dark:ring-offset-orange-300 dark:bg-orange-300 dark:border-orange-300"
-                    required
                   />
                 </div>
                 <div className="ms-3 text-sm">
                   <label
                     htmlFor="remember"
-                    className="  font-bold font-['Montserrat Subrayada'] font-medium text-gray-500 dark:text-gray-400"
+                    className="font-bold font-['Montserrat Subrayada'] font-medium text-gray-500 dark:text-gray-400"
                   >
                     Lembrar do meu Login
                   </label>
                 </div>
                 <a
                   href="/externalUser/esqueci-senha"
-                  className="  font-bold font-['Montserrat Subrayada'] ms-auto text-sm font-medium text-blue-600 hover:underline dark:text-black-500"
+                  className="font-bold font-['Montserrat Subrayada'] ms-auto text-sm font-medium text-blue-600 hover:underline dark:text-black-500"
                 >
                   Perdi a minha senha, me ajuda!!
                 </a>
               </div>
              
-              <a
-                href="/internalUser/home-wave"
-                className=" bg-orange-300 inline-flex justify-center items-center py-3 px-5 sm:ms-4 text-base font-medium text-center text-gray-900 rounded-lg border border-gray-300 hover:bg-gray-100 focus:ring-4 focus:ring-gray-100 dark:text-black dark:border-gray-700 dark:hover:bg-gray-700 dark:focus:ring-gray-800"
+              <button
+                type="submit"
+                className="bg-orange-300 inline-flex justify-center items-center py-3 px-5 sm:ms-4 text-base font-medium text-center text-gray-900 rounded-lg border border-gray-300 hover:bg-gray-100 focus:ring-4 focus:ring-gray-100 dark:text-black dark:border-gray-700 dark:hover:bg-gray-700 dark:focus:ring-gray-800"
               >
                 Começar a programar
-              </a>
+              </button>
+              {error && <div className="text-sm font-medium text-red-600">{error}</div>}
               <div className="text-sm font-medium text-gray-900 dark:text-white">
                 Novo por aqui?{" "}
                 <Link
@@ -121,8 +141,8 @@ export default function LoginKiosk() {
           </div>
         </div>
       </section>
-
-     </div>
-
+    </div>
   );
-}
+};
+
+export default LoginKiosk;
