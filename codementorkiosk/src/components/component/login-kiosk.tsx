@@ -1,26 +1,30 @@
-import React, { useState } from 'react';
+"use client";
+
+import React, { useState } from "react";
 import Link from "next/link";
-import axios from 'axios';
-import { CardTitle, CardDescription, CardHeader, CardContent, CardFooter, Card } from "@/components/ui/card";
-import { Input } from "@/components/ui/input";
-import { Button } from "@/components/ui/button";
+import axios from "axios";
+import { useRouter } from "next/navigation";
 
 const LoginKiosk: React.FC = () => {
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
-  const [error, setError] = useState('');
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [error, setError] = useState("");
+  const router = useRouter();
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     try {
-      const response = await axios.post('http://localhost:5000/api/login', { email, password });
-      // Supondo que a resposta tenha um token ou algo semelhante
+      const response = await axios.post("https://978d-2804-38a-a036-f8b1-88f-aebd-c5b7-576f.ngrok-free.app/api/Usuario", {
+        email,
+        senha: password,
+      });
       const { token } = response.data;
-      // Armazene o token em algum lugar (localStorage, context, etc.)
-      console.log('Login bem-sucedido!', token);
+      console.log("Login bem-sucedido!", token);
+      // Redirecionar o usuário para a página desejada após o login
+      router.push('/dashboard'); // Ajuste o caminho conforme necessário
     } catch (error) {
-      console.error('Erro ao fazer login', error);
-      setError('Credenciais inválidas');
+      console.error("Erro ao fazer login", error);
+      setError("Credenciais inválidas");
     }
   };
 
@@ -29,27 +33,26 @@ const LoginKiosk: React.FC = () => {
       <header className="p-5 bg-[#f8eacd] shadow-md">
         <nav className="bg-orange-100 dark:bg-gray-900 fixed w-full z-20 top-0 start-0 shadow-md">
           <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
-            <a href="/externalUser/blog" className="flex items-center space-x-3 rtl:space-x-reverse">
-              <img className="w-40 h-auto" src="img/header.png" alt="" />
-            </a>
+            <Link href="/externalUser/blog" className="flex items-center space-x-3 rtl:space-x-reverse">
+              <img className="w-40 h-auto" src="img/header.png" alt="Header" />
+            </Link>
 
             <div className="items-center justify-between hidden w-full md:flex md:w-auto md:order-1" id="navbar-sticky">
               <ul className="flex flex-col p-4 md:p-0 mt-4 font-medium border border-gray-100 rounded-lg bg-gray-50 md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-orange-100 dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
                 <li>
-                  <a href="/externalUser/blog" className="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-orange-300 md:p-0 md:dark:hover:text-black-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">
+                  <Link href="/externalUser/blog" className="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-orange-300 md:p-0 md:dark:hover:text-black-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">
                     Blog
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a href="/externalUser/qm-somos" className="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-orange-300 md:p-0 md:dark:hover:text-black-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">
+                  <Link href="/externalUser/qm-somos" className="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-orange-300 md:p-0 md:dark:hover:text-black-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">
                     Quem Somos?
-                  </a>
+                  </Link>
                 </li>
-
                 <li>
-                  <a href="/externalUser/contato" className="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-orange-300 md:p-0 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">
+                  <Link href="/externalUser/contato" className="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-orange-300 md:p-0 md:dark:hover:text-black-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">
                     Contate-nos
-                  </a>
+                  </Link>
                 </li>
               </ul>
             </div>
@@ -98,46 +101,33 @@ const LoginKiosk: React.FC = () => {
                     className="w-4 h-4 border-orange-300 rounded bg-orange-300 focus:ring-3 focus:ring-blue-300 dark:focus:ring-blue-600 dark:ring-offset-orange-300 dark:bg-orange-300 dark:border-orange-300"
                   />
                 </div>
-                <div className="ms-3 text-sm">
-                  <label
-                    htmlFor="remember"
-                    className="font-bold font-['Montserrat Subrayada'] font-medium text-gray-500 dark:text-gray-400"
-                  >
+                <div className="ml-3 text-sm">
+                  <label htmlFor="remember" className=" font-medium text-gray-500 dark:text-gray-400">
                     Lembrar do meu Login
                   </label>
                 </div>
-                <a
-                  href="/externalUser/esqueci-senha"
-                  className="font-bold font-['Montserrat Subrayada'] ms-auto text-sm font-medium text-blue-600 hover:underline dark:text-black-500"
-                >
+                <Link href="/externalUser/esqueci-senha" className=" ml-auto text-sm font-medium text-blue-600 hover:underline dark:text-black-500">
                   Perdi a minha senha, me ajuda!!
-                </a>
+                </Link>
               </div>
-             
+
               <button
                 type="submit"
-                className="bg-orange-300 inline-flex justify-center items-center py-3 px-5 sm:ms-4 text-base font-medium text-center text-gray-900 rounded-lg border border-gray-300 hover:bg-gray-100 focus:ring-4 focus:ring-gray-100 dark:text-black dark:border-gray-700 dark:hover:bg-gray-700 dark:focus:ring-gray-800"
+                className="bg-orange-300 inline-flex justify-center items-center py-3 px-5 sm:ml-4 text-base font-medium text-center text-gray-900 rounded-lg border border-gray-300 hover:bg-gray-100 focus:ring-4 focus:ring-gray-100 dark:text-black dark:border-gray-700 dark:hover:bg-gray-700 dark:focus:ring-gray-800"
               >
                 Começar a programar
               </button>
               {error && <div className="text-sm font-medium text-red-600">{error}</div>}
               <div className="text-sm font-medium text-gray-900 dark:text-white">
                 Novo por aqui?{" "}
-                <Link
-                  href="/externalUser/register"
-                  className="text-blue-600 hover:underline dark:text-blue-500"
-                >
+                <Link href="/externalUser/register" className="text-blue-600 hover:underline dark:text-blue-500">
                   Cadastre-se já!
                 </Link>
               </div>
             </form>
           </div>
           <div>
-            <img
-              className="h-auto max-w-lg ms-auto"
-              src="img/imagemenu.png"
-              alt="menu poh"
-            />
+            <img className="h-auto max-w-lg ml-auto" src="img/imagemenu.png" alt="menu poh" />
           </div>
         </div>
       </section>

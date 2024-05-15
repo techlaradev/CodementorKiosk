@@ -1,4 +1,5 @@
-import { Collapsible } from "@/components/ui/collapsible"
+import { Collapsible } from "@/components/ui/collapsible";
+import Link from "next/link";
 
 export function TermsAndServicesCp() {
   return (
@@ -63,8 +64,13 @@ export function TermsAndServicesCp() {
               </div>
             </div>
           </Collapsible>
+          <div className="flex justify-center mt-8">
+            <Link href="/">
+              <a className="px-4 py-2 text-white bg-blue-600 rounded hover:bg-blue-700">Voltar</a>
+            </Link>
+          </div>
         </div>
       </div>
     </section>
-  )
+  );
 }
