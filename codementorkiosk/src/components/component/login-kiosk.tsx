@@ -14,14 +14,14 @@ const LoginKiosk: React.FC = () => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     try {
-      const response = await axios.post("https://978d-2804-38a-a036-f8b1-88f-aebd-c5b7-576f.ngrok-free.app/api/Usuario", {
+      const response = await axios.post("https://9c0c-2804-388-c2a4-bd60-2c8d-2b4f-e5c1-b8fe.ngrok-free.app/api/Login", {
         email,
         senha: password,
       });
       const { token } = response.data;
       console.log("Login bem-sucedido!", token);
       // Redirecionar o usuário para a página desejada após o login
-      router.push('/dashboard'); // Ajuste o caminho conforme necessário
+      router.push('/internalUser/home-courses'); // Ajuste o caminho conforme necessário
     } catch (error) {
       console.error("Erro ao fazer login", error);
       setError("Credenciais inválidas");

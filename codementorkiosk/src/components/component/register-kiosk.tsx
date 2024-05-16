@@ -1,5 +1,4 @@
-"use client"; // Indica que este componente é um Client Component
-
+"use client";
 import React, { useState } from "react";
 import axios from "axios";
 import Link from "next/link";
@@ -30,7 +29,7 @@ export default function RegisterKiosk() {
     }
 
     try {
-      const response = await axios.post("https://978d-2804-38a-a036-f8b1-88f-aebd-c5b7-576f.ngrok-free.app/api/Usuario", {
+      const response = await axios.post("https://9c0c-2804-388-c2a4-bd60-2c8d-2b4f-e5c1-b8fe.ngrok-free.app/api/Usuario", {
         tipoUsuario,
         nome,
         email,
@@ -41,12 +40,14 @@ export default function RegisterKiosk() {
 
       toast.success("Registro bem-sucedido!");
       console.log("Registro bem-sucedido!", response.data);
+
+      // Redireciona o usuário para a página de login
+      window.location.href = '/internalUser/home-course';
     } catch (error) {
       console.error("Erro ao fazer registro", error);
       toast.error("Erro ao fazer registro. Tente novamente.");
     }
   };
-
   return (
     <div>
       <ToastContainer />
@@ -116,8 +117,9 @@ export default function RegisterKiosk() {
                     value={telefone}
                     onChange={(e: { target: { value: React.SetStateAction<string>; }; }) => setTelefone(e.target.value)}
                   >
-                    {() => (
+                    {(inputProps: React.JSX.IntrinsicAttributes & React.ClassAttributes<HTMLInputElement> & React.InputHTMLAttributes<HTMLInputElement>) => (
                       <input
+                        {...inputProps}
                         type="tel"
                         name="telefone"
                         id="telefone"
@@ -133,8 +135,9 @@ export default function RegisterKiosk() {
                     value={celular}
                     onChange={(e: { target: { value: React.SetStateAction<string>; }; }) => setCelular(e.target.value)}
                   >
-                    {() => (
+                    {(inputProps: React.JSX.IntrinsicAttributes & React.ClassAttributes<HTMLInputElement> & React.InputHTMLAttributes<HTMLInputElement>) => (
                       <input
+                        {...inputProps}
                         type="tel"
                         name="celular"
                         id="celular"
