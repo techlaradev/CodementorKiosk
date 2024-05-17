@@ -14,7 +14,7 @@ const LoginKiosk: React.FC = () => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     try {
-      const response = await axios.post("https://9c0c-2804-388-c2a4-bd60-2c8d-2b4f-e5c1-b8fe.ngrok-free.app/api/Login", {
+      const response = await axios.post("https://a0b4-2804-14d-7e88-78f7-615d-d523-b031-3458.ngrok-free.app/api/Login", {
         email,
         senha: password,
       });
