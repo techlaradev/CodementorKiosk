@@ -2,7 +2,7 @@
 
 import React, { useState } from "react";
 import Link from "next/link";
-import axios from "axios";
+import api from "@/app/utils/api";
 import { useRouter } from "next/navigation";
 
 const LoginKiosk: React.FC = () => {
@@ -14,14 +14,20 @@ const LoginKiosk: React.FC = () => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     try {
-      const response = await axios.post("https://a0b4-2804-14d-7e88-78f7-615d-d523-b031-3458.ngrok-free.app/api/Login", {
+      const response = await api.post("/api/Login", {
         email,
         senha: password,
       });
-      const { token } = response.data;
-      console.log("Login bem-sucedido!", token);
-      // Redirecionar o usuário para a página desejada após o login
-      router.push('/internalUser/home-courses'); // Ajuste o caminho conforme necessário
+
+      const { token, refreshToken, tokenDescriptografado } = response.data.data;
+
+      // Save the tokens and user details in localStorage
+      localStorage.setItem("token", token);
+      localStorage.setItem("refreshToken", refreshToken);
+      localStorage.setItem("user", JSON.stringify(tokenDescriptografado));
+
+      // Redirect the user to the desired page after login
+      router.push("/internalUser/home-wave");
     } catch (error) {
       console.error("Erro ao fazer login", error);
       setError("Credenciais inválidas");
@@ -33,24 +39,39 @@ const LoginKiosk: React.FC = () => {
       <header className="p-5 bg-[#f8eacd] shadow-md">
         <nav className="bg-orange-100 dark:bg-gray-900 fixed w-full z-20 top-0 start-0 shadow-md">
           <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
-            <Link href="/externalUser/blog" className="flex items-center space-x-3 rtl:space-x-reverse">
+            <Link
+              href="/externalUser/blog"
+              className="flex items-center space-x-3 rtl:space-x-reverse"
+            >
               <img className="w-40 h-auto" src="img/header.png" alt="Header" />
             </Link>
 
-            <div className="items-center justify-between hidden w-full md:flex md:w-auto md:order-1" id="navbar-sticky">
+            <div
+              className="items-center justify-between hidden w-full md:flex md:w-auto md:order-1"
+              id="navbar-sticky"
+            >
               <ul className="flex flex-col p-4 md:p-0 mt-4 font-medium border border-gray-100 rounded-lg bg-gray-50 md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-orange-100 dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
                 <li>
-                  <Link href="/externalUser/blog" className="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-orange-300 md:p-0 md:dark:hover:text-black-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">
+                  <Link
+                    href="/externalUser/blog"
+                    className="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-orange-300 md:p-0 md:dark:hover:text-black-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
+                  >
                     Blog
                   </Link>
                 </li>
                 <li>
-                  <Link href="/externalUser/qm-somos" className="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-orange-300 md:p-0 md:dark:hover:text-black-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">
+                  <Link
+                    href="/externalUser/qm-somos"
+                    className="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-orange-300 md:p-0 md:dark:hover:text-black-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
+                  >
                     Quem Somos?
                   </Link>
                 </li>
                 <li>
-                  <Link href="/externalUser/contato" className="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-orange-300 md:p-0 md:dark:hover:text-black-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">
+                  <Link
+                    href="/externalUser/contato"
+                    className="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-orange-300 md:p-0 md:dark:hover:text-black-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
+                  >
                     Contate-nos
                   </Link>
                 </li>
@@ -102,11 +123,17 @@ const LoginKiosk: React.FC = () => {
                   />
                 </div>
                 <div className="ml-3 text-sm">
-                  <label htmlFor="remember" className=" font-medium text-gray-500 dark:text-gray-400">
+                  <label
+                    htmlFor="remember"
+                    className=" font-medium text-gray-500 dark:text-gray-400"
+                  >
                     Lembrar do meu Login
                   </label>
                 </div>
-                <Link href="/externalUser/esqueci-senha" className=" ml-auto text-sm font-medium text-blue-600 hover:underline dark:text-black-500">
+                <Link
+                  href="/externalUser/esqueci-senha"
+                  className=" ml-auto text-sm font-medium text-blue-600 hover:underline dark:text-black-500"
+                >
                   Perdi a minha senha, me ajuda!!
                 </Link>
               </div>
@@ -117,17 +144,26 @@ const LoginKiosk: React.FC = () => {
               >
                 Começar a programar
               </button>
-              {error && <div className="text-sm font-medium text-red-600">{error}</div>}
+              {error && (
+                <div className="text-sm font-medium text-red-600">{error}</div>
+              )}
               <div className="text-sm font-medium text-gray-900 dark:text-white">
                 Novo por aqui?{" "}
-                <Link href="/externalUser/register" className="text-blue-600 hover:underline dark:text-blue-500">
+                <Link
+                  href="/externalUser/register"
+                  className="text-blue-600 hover:underline dark:text-blue-500"
+                >
                   Cadastre-se já!
                 </Link>
               </div>
             </form>
           </div>
           <div>
-            <img className="h-auto max-w-lg ml-auto" src="img/imagemenu.png" alt="menu poh" />
+            <img
+              className="h-auto max-w-lg ml-auto"
+              src="img/imagemenu.png"
+              alt="menu poh"
+            />
           </div>
         </div>
       </section>

@@ -1,13 +1,12 @@
 "use client";
 import React, { useState } from "react";
-import axios from "axios";
+import api from "@/app/utils/api";
 import Link from "next/link";
-import InputMask from 'react-input-mask';
 import { ToastContainer, toast } from "react-toastify";
-import 'react-toastify/dist/ReactToastify.css';
+import "react-toastify/dist/ReactToastify.css";
 
 export default function RegisterKiosk() {
-  const [tipoUsuario] = useState(0); // Valor fixo conforme o exemplo
+  const [tipoUsuario, setTipoUsuario] = useState(0); // Inicialmente 0, pode ser alterado pelo select
   const [nome, setNome] = useState("");
   const [email, setEmail] = useState("");
   const [senha, setSenha] = useState("");
@@ -29,7 +28,7 @@ export default function RegisterKiosk() {
     }
 
     try {
-      const response = await axios.post("https://a0b4-2804-14d-7e88-78f7-615d-d523-b031-3458.ngrok-free.app/api/Usuario", {
+      const response = await api.post("/api/Usuario", {
         tipoUsuario,
         nome,
         email,
@@ -39,15 +38,18 @@ export default function RegisterKiosk() {
       });
 
       toast.success("Registro bem-sucedido!");
-      console.log("Registro bem-sucedido!", response.data);
+
+      setTimeout(() => {
+        window.location.href = "/";
+      }, 3000);
 
       // Redireciona o usuário para a página de login
-      window.location.href = '/internalUser/home-course';
     } catch (error) {
       console.error("Erro ao fazer registro", error);
       toast.error("Erro ao fazer registro. Tente novamente.");
     }
   };
+
   return (
     <div>
       <ToastContainer />
@@ -112,41 +114,45 @@ export default function RegisterKiosk() {
                   />
                 </div>
                 <div>
-                  <InputMask
-                    mask="(99) 9999-9999"
+                  <input
+                    type="tel"
+                    name="telefone"
+                    id="telefone"
+                    className="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                    placeholder="Insira seu telefone aqui!"
                     value={telefone}
-                    onChange={(e: { target: { value: React.SetStateAction<string>; }; }) => setTelefone(e.target.value)}
-                  >
-                    {(inputProps: React.JSX.IntrinsicAttributes & React.ClassAttributes<HTMLInputElement> & React.InputHTMLAttributes<HTMLInputElement>) => (
-                      <input
-                        {...inputProps}
-                        type="tel"
-                        name="telefone"
-                        id="telefone"
-                        className="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                        placeholder="Insira seu telefone aqui!"
-                      />
-                    )}
-                  </InputMask>
+                    onChange={(e) => setTelefone(e.target.value)}
+                  />
                 </div>
                 <div>
-                  <InputMask
-                    mask="(99) 99999-9999"
+                  <input
+                    type="tel"
+                    name="celular"
+                    id="celular"
+                    className="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                    placeholder="Insira seu celular aqui!"
+                    required
                     value={celular}
-                    onChange={(e: { target: { value: React.SetStateAction<string>; }; }) => setCelular(e.target.value)}
+                    onChange={(e) => setCelular(e.target.value)}
+                  />
+                </div>
+                <div>
+                  <label
+                    htmlFor="tipoUsuario"
+                    className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
                   >
-                    {(inputProps: React.JSX.IntrinsicAttributes & React.ClassAttributes<HTMLInputElement> & React.InputHTMLAttributes<HTMLInputElement>) => (
-                      <input
-                        {...inputProps}
-                        type="tel"
-                        name="celular"
-                        id="celular"
-                        className="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                        placeholder="Insira seu celular aqui!"
-                        required
-                      />
-                    )}
-                  </InputMask>
+                    Você é aluno ou professor?
+                  </label>
+                  <select
+                    id="tipoUsuario"
+                    className="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                    value={tipoUsuario}
+                    onChange={(e) => setTipoUsuario(parseInt(e.target.value))}
+                    required
+                  >
+                    <option value={1}>Aluno</option>
+                    <option value={0}>Professor</option>
+                  </select>
                 </div>
                 <div className="flex items-start">
                   <div className="flex items-center h-5">
