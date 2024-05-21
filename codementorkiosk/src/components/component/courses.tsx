@@ -1,6 +1,7 @@
 import React from "react";
 import { Card } from "../ui/card";
 import Link from "next/link";
+import UserDetails from "./UserDetails";
 
 export function HomeCourse() {
   return (
@@ -88,7 +89,7 @@ export function HomeCourse() {
             className="mb-4 text-4xl font-extrabold tracking-tight leading-none text-gray-900 md:text-5xl lg:text-3xl dark:text-white flex-1 p-6"
             style={{ marginTop: "40px" }}
           >
-             Olá, [ Username ] !
+            Olá, <UserDetails />!
           </h3>
           <div className="flex space-x-5 flex-wrap justify-center">
             <div>
@@ -101,20 +102,28 @@ export function HomeCourse() {
                 </figure>
                 <div className="card-body cursor-pointer">
                   <h2 className="card-title">Guia em Java Script</h2>
-                  <h3 className="text-sm text-left" >
+                  <h3 className="text-sm text-left">
                     {" "}
                     Desenvolva habilidades sólidas em programação com uma
                     linguagem amplamente utilizada na indústria de software. Com
                     uma sintaxe simples e poderosa, o C# é ideal para iniciantes
                     e oferece um caminho claro para construir aplicativos para
                     desktop, web e dispositivos móveis.
-                  </h3> 
+                  </h3>
                   <div className="card-actions justify-end">
-                  <svg className=" w-6 h-6  text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24">
-    <path fill-rule="evenodd" d="M2 12a10 10 0 1 1 20 0 10 10 0 0 1-20 0Zm13.7-1.3a1 1 0 0 0-1.4-1.4L11 12.6l-1.8-1.8a1 1 0 0 0-1.4 1.4l2.5 2.5c.4.4 1 .4 1.4 0l4-4Z" clip-rule="evenodd" />
- 
-  </svg>
-  
+                    <svg
+                      className=" w-6 h-6  text-gray-800 dark:text-white"
+                      aria-hidden="true"
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        fill-rule="evenodd"
+                        d="M2 12a10 10 0 1 1 20 0 10 10 0 0 1-20 0Zm13.7-1.3a1 1 0 0 0-1.4-1.4L11 12.6l-1.8-1.8a1 1 0 0 0-1.4 1.4l2.5 2.5c.4.4 1 .4 1.4 0l4-4Z"
+                        clip-rule="evenodd"
+                      />
+                    </svg>
                   </div>
                 </div>
               </div>
@@ -129,14 +138,14 @@ export function HomeCourse() {
                 </figure>
                 <div className="card-body cursor-pointer">
                   <h2 className="card-title">HTML e CSS</h2>
-                  <h3 className="text-sm text-left" >
+                  <h3 className="text-sm text-left">
                     {" "}
                     Desenvolva habilidades sólidas em programação com uma
                     linguagem amplamente utilizada na indústria de software. Com
                     uma sintaxe simples e poderosa, o C# é ideal para iniciantes
                     e oferece um caminho claro para construir aplicativos para
                     desktop, web e dispositivos móveis.
-                  </h3> 
+                  </h3>
                 </div>
               </div>
             </div>
@@ -150,14 +159,14 @@ export function HomeCourse() {
                 </figure>
                 <div className="card-body cursor-pointer">
                   <h2 className="card-title">C#</h2>
-                  <h3 className="text-sm text-left" >
+                  <h3 className="text-sm text-left">
                     {" "}
                     Desenvolva habilidades sólidas em programação com uma
                     linguagem amplamente utilizada na indústria de software. Com
                     uma sintaxe simples e poderosa, o C# é ideal para iniciantes
                     e oferece um caminho claro para construir aplicativos para
                     desktop, web e dispositivos móveis.
-                  </h3> 
+                  </h3>
                 </div>
               </div>
             </div>
